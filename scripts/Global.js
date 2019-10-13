@@ -58,9 +58,7 @@ let Global = {
       Global.keys.value = 0;
       Global.keys.lock();
 
-      let w = Math.max(Global.currentScene.width, door.to.width);
-      let h = Math.max(Global.currentScene.height, door.to.height);
-      let r = new Rect(0, 0, w, h, "#000000", 0);
+      let r = new Rect(0, 0, Global.c.width, Global.c.height, "#000000", 0);
       let alphaStep = 2 / (ms / (1000 / Global.fps));
       new Controller(r, function(){
         r.alpha += alphaStep;
