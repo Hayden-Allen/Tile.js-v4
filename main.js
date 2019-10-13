@@ -170,7 +170,7 @@ new AnimatedTile("assets/animation/fire.png", 7, 7, 3, 250, {rigid: true, light:
 new AnimatedTile("assets/animation/fire.png", 7, 24, 3, 250, {rigid: true, light: 11});
 new AnimatedTile("assets/animation/fire.png", 24, 7, 3, 250, {rigid: true, light: 11});
 new AnimatedTile("assets/animation/fire.png", 24, 24, 3, 250, {rigid: true, light: 11});
-new Door("assets/tile/door.png", 0, 0, 1, 0, scene1, 15, 16);
+new Door("assets/tile/door.png", 0, 0, 1, 0, scene1, 21, 22);
 scene2.finalize();
 
 Global.currentScene = scene3;
