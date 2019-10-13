@@ -183,6 +183,8 @@ Global.tileStretch("assets/tile/wood.png", 9, 9, 3, 1, {rigid: true});
 Global.tileStretch("assets/tile/brick.png", 9, 0, 2, 4);
 Global.tileStretch("assets/tile/brick.png", 8, 3, 1, 2, {rigid: true});
 Global.tileStretch("assets/tile/brick.png", 11, 3, 1, 2, {rigid: true});
+new Tile("assets/tile/brick_slope_tl.png", 8, 2);
+new Tile("assets/tile/brick_slope_tr.png", 11, 2);
 Global.tileStretch("assets/decoration/wood_pile.png", 9, 4, 2, 1);
 Global.animatedTileStretch("assets/animation/fire.png", 9, 4, 2, 1, 3, 250, {rigid: true, light: 7});
 new Tile("assets/decoration/bear_rug.png", 9, 5, {zindex: 1, w: 2, h: 2});
