@@ -2,13 +2,14 @@ class Character { //collection of DynamicTiles
   constructor(x, y, direction, states, inventory, properties){
     this.direction = direction; //direction facing (from 0 to 3)
     this.states = states; //DynamicTiles representing different animation states
-    this.currentState = Object.values(this.states)[0];  //set current to first in list
+    this.currentState;
     this.root = new DynamicTile("", x, y, 0, 0, new Vec2(0, 0), properties);  //invisible root Tile that all transformations will be applied to
     this.inventory = inventory; //list of Items
     this.currentItem = 0; //index of equipped Item
 
     for(var state in this.states){  //make each animation state a child of root
       let cur = this.states[state];
+      cur.properties.visible = false;
       this.root.addChild(cur, cur.x, cur.y);
     }
   }
@@ -34,7 +35,8 @@ class Character { //collection of DynamicTiles
       cur.use(this);
   }
   setState(state){  //changes current animation state
-    this.currentState.properties.visible = false; //set current to invisible
+    if(this.currentState)
+      this.currentState.properties.visible = false; //set current to invisible
     this.currentState = state;  //set to new
     this.currentState.properties.visible = true;  //set new to visible
   }

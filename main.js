@@ -11,6 +11,7 @@ let player = new Character(500, 500, 0, //starts at (500, 500), facing up
    //interacts with doors, 2nd layer of Scene, interacts with other rigid Tiles, emits light, movable by other rigid Tiles
    {doors: true, zindex: 1, rigid: true, speed: 10 * Global.tileSize, light: 7, movable: true}
  );
+ player.setState(player.states.idle);
 
 //moves player 3 Tiles up
 let trampoline = new Item("assets/item/ball.png", 0, 0, 1, 1000,
@@ -268,6 +269,8 @@ update(); //call once to start loop
 
 //handle keyboard input and store result in Global.keys
 window.onkeydown = function(e){
+  e.preventDefault();
+  e.stopPropagation();
   for(var key in Global.Key.Code)
     if(e.keyCode === Global.Key.Code[key]){
       Global.keys.set(Global.Key[key]);
@@ -281,3 +284,5 @@ window.onkeyup = function(e){
 }
 //whenever the display area changes size, resize the canvas
 window.onresize = Global.init;
+//prevent right click menu
+window.oncontextmenu = function(){return false;};
